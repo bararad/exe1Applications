@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="JavaScript.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter a Value</h1>
+        <input id="inp" type="number" />
+        <button id="setbtn" onclick="f1()">set</button>
+        <button onclick="f2()">+</button>
+        <button onclick="f3()">show</button>
+        <div id="ph"></div>
+    </div>
+</body>
+</html>
+<script>
+    var c;
+    function f1()
+    {
+        let val = document.getElementById("inp").value;
+        c = new Counter(val);
+    }
+    function f2() {
+        if (c==undefined) {
+            alert("please set a value first");
+            return;
+        }
+        c.Increment();
+        document.getElementById("inp").value = c.value;
+    }
+    function f3()
+    {
+        if (c==undefined) {
+            return;
+        }
+
+        document.getElementById("ph").innerHTML = c.Go();
+
+    }
+
+</script>
